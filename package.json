@@ -22,6 +22,7 @@
   "homepage": "https://github.com/wdavidcch/to-do-list#readme",
   "devDependencies": {
     "@babel/eslint-parser": "^7.18.2",
+    "@babel/plugin-proposal-optional-chaining": "^7.18.6",
     "babel-eslint": "^10.1.0",
     "css-loader": "^6.7.1",
     "eslint": "^7.32.0",

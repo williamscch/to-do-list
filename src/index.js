@@ -5,9 +5,9 @@ let tasksArray = [];
 
 class Tasks {
   constructor(description, completed, index) {
-    this.description = description,
-    this.completed = completed,
-    this.index = index,
+    this.description = description;
+    this.completed = completed;
+    this.index = index;
   }
 }
 
@@ -61,6 +61,7 @@ const displayTasks = () => {
 
 enterNewTask.addEventListener('keypress', (e) => {
   if (e.keyCode === 13) {
+    // eslint-disable-next-line no-unused-expressions
     e.preventDefault;
     const task = new Tasks(enterNewTask.value, false, tasksArray.length);
     addTaskStorage(task);
