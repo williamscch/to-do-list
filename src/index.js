@@ -1,22 +1,21 @@
-import _ from "lodash";
-import "./style.css";
+import './style.css';
 
-const enterNewTask = document.querySelector(".enter");
-let tasksArray = []
+const enterNewTask = document.querySelector('.enter');
+let tasksArray = [];
 
 class Tasks {
   constructor(description, completed, index) {
-    (this.description = description),
-      (this.completed = completed),
-      (this.index = index);
+    this.description = description,
+    this.completed = completed,
+    this.index = index,
   }
 }
 
 const getTasks = () => {
-  if (localStorage.getItem("tasks") === null) {
+  if (localStorage.getItem('tasks') === null) {
     tasksArray = [];
   } else {
-    tasksArray = JSON.parse(localStorage.getItem("tasks"));
+    tasksArray = JSON.parse(localStorage.getItem('tasks'));
   }
   return tasksArray;
 };
@@ -24,7 +23,7 @@ const getTasks = () => {
 const addTaskStorage = (task) => {
   tasksArray = getTasks();
   tasksArray.push(task);
-  localStorage.setItem("tasks", JSON.stringify(tasksArray));
+  localStorage.setItem('tasks', JSON.stringify(tasksArray));
 };
 
 // const removeTaskStorage = (bookdescription) => {
@@ -33,25 +32,25 @@ const addTaskStorage = (task) => {
 //     localStorage.setItem('tasks', JSON.stringify(tasksArray));
 //   }
 
-const displayTasks = () => {
-    tasksArray = getTasks();
-    tasksArray.forEach((task) => addTaskScreen(task));
-  };
-
 const addTaskScreen = (task) => {
   const tasksList = document.getElementById('list');
-  const taskLine = document.createElement("ul");
-  const description = document.createElement("h3");
-  const options = document.createElement("span");
+  const taskLine = document.createElement('ul');
+  const description = document.createElement('h3');
+  const options = document.createElement('span');
   // const removeButton = document.createElement("span");
   // removeButton.classList.add("delete");
 
   description.innerHTML = `<input type='checkbox'>&nbsp&nbsp${task.description}`;
-    options.innerHTML = `<i class="fa-solid fa-ellipsis-vertical"></i>`;
-    // removeButton.innerHTML = `<i class="fa-solid fa-trash-can"></i>`;
+  options.innerHTML = '<i class="fa-solid fa-ellipsis-vertical"></i>';
+  // removeButton.innerHTML = `<i class="fa-solid fa-trash-can"></i>`;
 
   tasksList.appendChild(taskLine);
   taskLine.append(description, options);
+};
+
+const displayTasks = () => {
+  tasksArray = getTasks();
+  tasksArray.forEach((task) => addTaskScreen(task));
 };
 
 // static removeBook(eTarget) {
@@ -60,7 +59,7 @@ const addTaskScreen = (task) => {
 //   }
 // }
 
-enterNewTask.addEventListener("keypress", (e) => {
+enterNewTask.addEventListener('keypress', (e) => {
   if (e.keyCode === 13) {
     e.preventDefault;
     const task = new Tasks(enterNewTask.value, false, tasksArray.length);

@@ -22,7 +22,7 @@ body {
 }
 
 .big-container h1 i {
-    font-size: 1rem;
+  font-size: 1rem;
 }
 
 .big-container input {
@@ -53,6 +53,7 @@ body {
   align-items: center;
 }
 
-#list ul h3, span{
-    font-weight: 300;
+#list ul h3,
+span {
+  font-weight: 300;
 }
