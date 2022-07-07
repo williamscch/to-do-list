@@ -52,7 +52,7 @@ body {
   background-color: #ffffbf;
 }
 
-.options{
+.options {
   margin-left: auto;
 }
 
@@ -69,7 +69,8 @@ body {
   margin-left: auto;
 }
 
-#list ul input, h3,
+#list ul input,
+h3,
 span {
   font-weight: 300;
   margin: 0;
