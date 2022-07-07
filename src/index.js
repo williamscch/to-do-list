@@ -31,6 +31,7 @@ enterNewTask.addEventListener('keypress', (e) => {
   if (e.keyCode === 13) {
     // eslint-disable-next-line no-unused-expressions
     e.preventDefault;
+    tasksArray = getTasks();
     const task = new Tasks(enterNewTask.value, false, tasksArray.length);
     addTaskStorage(task);
     addTaskScreen(task);
