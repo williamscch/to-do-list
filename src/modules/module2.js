@@ -47,6 +47,7 @@ const addTaskScreen = (task) => {
 
     removeButton.addEventListener('click', () => {
       removeButton.parentElement.remove();
+      tasksArray = JSON.parse(localStorage.getItem('tasks'));
       tasksArray.splice(task.index, 1);
       tasksArray.forEach((task, index) => {
         task.index = index;
