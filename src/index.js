@@ -32,7 +32,7 @@ enterNewTask.addEventListener('keypress', (e) => {
     // eslint-disable-next-line no-unused-expressions
     e.preventDefault;
     tasksArray = getTasks();
-    const task = new Tasks(enterNewTask.value, false, tasksArray.length);
+    const task = new Tasks(enterNewTask.value, false, tasksArray.length + 1);
     addTaskStorage(task);
     addTaskScreen(task);
     enterNewTask.value = null;
