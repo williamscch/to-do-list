@@ -25,7 +25,7 @@ body {
   font-size: 1rem;
 }
 
-.big-container input {
+.enter {
   border: none;
   outline: none;
   font-style: italic;
@@ -43,13 +43,45 @@ body {
 #list ul {
   border-top: 0.5px solid #d0d9d4;
   display: flex;
-  justify-content: space-between;
-  padding: 0.5rem;
+  padding: 1rem;
   margin: 0;
-  align-items: center;
+  gap: 0.6rem;
 }
 
-#list ul h3,
+#list ul.active {
+  background-color: #ffffbf;
+}
+
+.options {
+  margin-left: auto;
+}
+
+.options.active {
+  display: none;
+}
+
+.delete {
+  display: none;
+}
+
+.delete.active {
+  display: block;
+  margin-left: auto;
+}
+
+#list ul input,
+h3,
 span {
   font-weight: 300;
+  margin: 0;
+}
+
+.edit-input {
+  background-color: #ffffbf;
+  padding: 0;
+  border: none;
+  outline: none;
+  font-style: italic;
+  font-weight: 300;
+  width: 100%;
 }
