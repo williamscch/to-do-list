@@ -1,7 +1,8 @@
-// import completedFunction from './module4.js';
+import clearAllCompleted from './module4.js';
 
 let tasksArray = [];
 const tasksList = document.getElementById('list');
+const clearAll = document.querySelector('.clear');
 
 const addTaskScreen = (task) => {
   const taskLine = document.createElement('ul');
@@ -56,8 +57,6 @@ const addTaskScreen = (task) => {
       }
     });
 
-    // completedFunction(checkBox);
-
     removeButton.addEventListener('click', () => {
       removeButton.parentElement.remove();
       tasksArray = JSON.parse(localStorage.getItem('tasks'));
@@ -67,6 +66,13 @@ const addTaskScreen = (task) => {
       });
       localStorage.setItem('tasks', JSON.stringify(tasksArray));
     });
+  });
+
+  clearAll.addEventListener('click', () => {
+    clearAllCompleted(tasksArray);
+    if (checkBox.checked) {
+      checkBox.parentElement.remove();
+    }
   });
 };
 

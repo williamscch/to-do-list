@@ -39,5 +39,3 @@ enterNewTask.addEventListener('keypress', (e) => {
 });
 
 displayTasks();
-
-// export { getTasks };
