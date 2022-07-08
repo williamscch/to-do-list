@@ -1,10 +1,9 @@
-// import tasksArray from './module3.js';
-// import Tasks from './module3.js';
+// import completedFunction from './module4.js';
 
 let tasksArray = [];
+const tasksList = document.getElementById('list');
 
 const addTaskScreen = (task) => {
-  const tasksList = document.getElementById('list');
   const taskLine = document.createElement('ul');
   const checkBox = document.createElement('input');
   checkBox.type = 'checkbox';
@@ -34,16 +33,30 @@ const addTaskScreen = (task) => {
     editField.addEventListener('keypress', (e) => {
       if (e.key === 'Enter') {
         tasksArray = JSON.parse(localStorage.getItem('tasks'));
-        tasksArray[task.index].description = editField.value;
+        tasksArray[task.index - 1].description = editField.value;
         localStorage.setItem('tasks', JSON.stringify(tasksArray));
 
         taskLine.replaceChild(description, editField);
-        description.innerHTML = tasksArray[task.index].description;
+        description.innerHTML = tasksArray[task.index - 1].description;
         taskLine.classList.remove('active');
         options.classList.remove('active');
         removeButton.classList.remove('active');
       }
     });
+
+    checkBox.addEventListener('change', () => {
+      if (checkBox.checked) {
+        tasksArray = JSON.parse(localStorage.getItem('tasks'));
+        tasksArray[task.index - 1].completed = true;
+        localStorage.setItem('tasks', JSON.stringify(tasksArray));
+      } else {
+        tasksArray = JSON.parse(localStorage.getItem('tasks'));
+        tasksArray[task.index - 1].completed = false;
+        localStorage.setItem('tasks', JSON.stringify(tasksArray));
+      }
+    });
+
+    // completedFunction(checkBox);
 
     removeButton.addEventListener('click', () => {
       removeButton.parentElement.remove();
@@ -57,4 +70,5 @@ const addTaskScreen = (task) => {
   });
 };
 
+// export { tasksList };
 export default addTaskScreen;

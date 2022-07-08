@@ -1,5 +1,4 @@
 import './style.css';
-// import tasksArray from './modules/module3.js';
 import addTaskScreen from './modules/module2.js';
 import Tasks from './modules/module3.js';
 
@@ -40,3 +39,5 @@ enterNewTask.addEventListener('keypress', (e) => {
 });
 
 displayTasks();
+
+// export { getTasks };
