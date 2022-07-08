@@ -52,8 +52,8 @@ body {
   background-color: #ffffbf;
 }
 
-input[type = "checkbox"]:checked +  input{
-text-decoration: line-through;
+input[type="checkbox"]:checked + input {
+  text-decoration: line-through;
 }
 
 .options {
