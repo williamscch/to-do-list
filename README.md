@@ -12,9 +12,9 @@
 - JavaScript: ES6, Modules, Classes, Arrow Functions, Events.
 - Webpack.
 
-## Live Demo (if available)
+## Live Demo
 
-[Live Demo Link](https://livedemo.com)
+[Live Demo Link](https://wdavidcch.github.io/to-do-list/)
 
 
 ## Getting Started
