@@ -1,6 +1,6 @@
 ![](https://img.shields.io/badge/Microverse-blueviolet)
 
-# To Do List
+# To-Do List
 
 >A simple to-do list to help you organize your daily tasks.
 
@@ -12,9 +12,9 @@
 - JavaScript: ES6, Modules, Classes, Arrow Functions, Events.
 - Webpack.
 
-## Live Demo (if available)
+## Live Demo
 
-[Live Demo Link](https://livedemo.com)
+[Live Demo Link](https://wdavidcch.github.io/to-do-list/dist/)
 
 
 ## Getting Started
