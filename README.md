@@ -1,6 +1,6 @@
 ![](https://img.shields.io/badge/Microverse-blueviolet)
 
-# To Do List
+# To-Do List
 
 >A simple to-do list to help you organize your daily tasks.
 
