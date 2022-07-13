@@ -1,11 +1,13 @@
-import clearAllCompleted from './module4.js';
+import clearAllCompleted from './clearAll-function.js';
+import { getTasks, addNewStorage } from './localStorage-functions.js';
 
-let tasksArray = [];
 const tasksList = document.getElementById('list');
 const clearAll = document.querySelector('.clear');
+let tasksArray = [];
 
 const addTaskScreen = (task) => {
-  const taskLine = document.createElement('ul');
+  const taskLine = document.createElement('div');
+  taskLine.classList.add('line');
   const checkBox = document.createElement('input');
   checkBox.type = 'checkbox';
   const description = document.createElement('h3');
@@ -33,9 +35,9 @@ const addTaskScreen = (task) => {
 
     editField.addEventListener('keypress', (e) => {
       if (e.key === 'Enter') {
-        tasksArray = JSON.parse(localStorage.getItem('tasks'));
+        tasksArray = getTasks();
         tasksArray[task.index - 1].description = editField.value;
-        localStorage.setItem('tasks', JSON.stringify(tasksArray));
+        addNewStorage(tasksArray);
 
         taskLine.replaceChild(description, editField);
         description.innerHTML = tasksArray[task.index - 1].description;
@@ -47,34 +49,33 @@ const addTaskScreen = (task) => {
 
     checkBox.addEventListener('change', () => {
       if (checkBox.checked) {
-        tasksArray = JSON.parse(localStorage.getItem('tasks'));
+        tasksArray = getTasks();
         tasksArray[task.index - 1].completed = true;
-        localStorage.setItem('tasks', JSON.stringify(tasksArray));
+        addNewStorage(tasksArray);
       } else {
-        tasksArray = JSON.parse(localStorage.getItem('tasks'));
+        tasksArray = getTasks();
         tasksArray[task.index - 1].completed = false;
-        localStorage.setItem('tasks', JSON.stringify(tasksArray));
+        addNewStorage(tasksArray);
       }
     });
 
     removeButton.addEventListener('click', () => {
       removeButton.parentElement.remove();
-      tasksArray = JSON.parse(localStorage.getItem('tasks'));
+      tasksArray = getTasks();
       tasksArray.splice(task.index - 1, 1);
       tasksArray.forEach((task, index) => {
         task.index = index + 1;
       });
-      localStorage.setItem('tasks', JSON.stringify(tasksArray));
+      addNewStorage(tasksArray);
     });
   });
 
   clearAll.addEventListener('click', () => {
-    clearAllCompleted(tasksArray);
+    clearAllCompleted();
     if (checkBox.checked) {
       checkBox.parentElement.remove();
     }
   });
 };
 
-// export { tasksList };
 export default addTaskScreen;
