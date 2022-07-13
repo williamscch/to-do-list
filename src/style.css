@@ -21,14 +21,14 @@ body {
   display: flex;
   flex-direction: column;
   background-color: #ffff;
-  border-radius: 10px ;
+  border-radius: 10px;
   padding: 0.5rem;
   gap: 1rem;
 }
 
 .big-container h1 {
   font-size: 2rem;
-  background-color:#363676;
+  background-color: #363676;
   margin: 0;
   border-radius: 5px;
   padding: 0.5rem;
@@ -105,7 +105,7 @@ input[type="checkbox"]:checked + input {
   font-style: italic;
   font-weight: 300;
   width: 100%;
-  color: #000000;
+  color: #000;
 }
 
 .clear {
@@ -116,7 +116,7 @@ input[type="checkbox"]:checked + input {
   padding: 0.5rem;
   color: #ffff;
   border-radius: 5px;
-  font-weight:500;
+  font-weight: 500;
   width: 40%;
   align-self: center;
 }
