@@ -1,11 +1,11 @@
 import clearAllCompleted from './clearAll-function.js';
 import { getTasks, addNewStorage } from './localStorage-functions.js';
 
-const tasksList = document.getElementById('list');
-const clearAll = document.querySelector('.clear');
 let tasksArray = [];
 
 const addTaskScreen = (task) => {
+  const tasksList = document.getElementById('list');
+  const clearAll = document.querySelector('.clear');
   const taskLine = document.createElement('div');
   taskLine.classList.add('line');
   const checkBox = document.createElement('input');
