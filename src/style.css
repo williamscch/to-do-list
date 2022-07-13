@@ -40,7 +40,7 @@ body {
   color: #000;
 }
 
-#list ul {
+.line {
   border-top: 0.5px solid #d0d9d4;
   display: flex;
   padding: 1rem;
@@ -48,7 +48,14 @@ body {
   gap: 0.6rem;
 }
 
-#list ul.active {
+.line input,
+h3,
+span {
+  font-weight: 300;
+  margin: 0;
+}
+
+.line.active {
   background-color: #ffffbf;
 }
 
@@ -71,13 +78,6 @@ input[type="checkbox"]:checked + input {
 .delete.active {
   display: block;
   margin-left: auto;
-}
-
-#list ul input,
-h3,
-span {
-  font-weight: 300;
-  margin: 0;
 }
 
 .edit-input {
