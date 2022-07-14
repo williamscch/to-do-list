@@ -3,6 +3,16 @@ import { getTasks, addNewStorage } from './localStorage-functions.js';
 
 let tasksArray = [];
 
+const removeTask = (removeButton, task) => {
+  removeButton.parentElement.remove();
+  tasksArray = getTasks();
+  tasksArray.splice(task.index - 1, 1);
+  tasksArray.forEach((task, index) => {
+    task.index = index + 1;
+  });
+  addNewStorage(tasksArray);
+};
+
 const addTaskScreen = (task) => {
   const tasksList = document.getElementById('list');
   const clearAll = document.querySelector('.clear');
@@ -60,13 +70,7 @@ const addTaskScreen = (task) => {
     });
 
     removeButton.addEventListener('click', () => {
-      removeButton.parentElement.remove();
-      tasksArray = getTasks();
-      tasksArray.splice(task.index - 1, 1);
-      tasksArray.forEach((task, index) => {
-        task.index = index + 1;
-      });
-      addNewStorage(tasksArray);
+      removeTask(removeButton, task);
     });
   });
 
