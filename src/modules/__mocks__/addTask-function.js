@@ -1,21 +1,13 @@
-const addTaskScreen = (task) => {
-  const tasksList = document.getElementById('list');
-  const taskLine = document.createElement('div');
-  taskLine.classList.add('line');
-  const checkBox = document.createElement('input');
-  checkBox.type = 'checkbox';
-  const description = document.createElement('h3');
-  const options = document.createElement('span');
-  const removeButton = document.createElement('span');
-  removeButton.classList.add('delete');
-  options.classList.add('options');
+import { addNewStorage, getTasks } from "../localStorage-functions";
 
-  description.innerHTML = task.description;
-  options.innerHTML = '<i class="fa-solid fa-ellipsis-vertical"></i>';
-  removeButton.innerHTML = '<i class="fa-solid fa-trash-can"></i>';
+const removeTask = (removeButton,task) => {
+  removeButton.parentElement.remove();
+  let tasksArray = getTasks();
+  tasksArray.splice(task.index - 1, 1);
+  tasksArray.forEach((task, index) => {
+    task.index = index + 1;
+  });
+  addNewStorage(tasksArray);
+}
 
-  tasksList.appendChild(taskLine);
-  taskLine.append(checkBox, description, options, removeButton);
-};
-
-export default addTaskScreen;
+export default  removeTask
