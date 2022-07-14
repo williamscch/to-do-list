@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1657837192722" clover="3.2.0">
-  <project timestamp="1657837192722" name="All files">
+<coverage generated="1657838691492" clover="3.2.0">
+  <project timestamp="1657838691492" name="All files">
     <metrics statements="81" coveredstatements="38" conditionals="8" coveredconditionals="2" methods="15" coveredmethods="4" elements="104" coveredelements="44" complexity="0" loc="81" ncloc="81" packages="1" files="4" classes="4"/>
-    <file name="addTask-function.js" path="/home/wdavidcch/Desktop/microverse/Module 2/to-do-list/src/modules/addTask-function.js">
+    <file name="addTask-function.js" path="C:\Users\User\Desktop\colaborators\to-do-list\src\modules\addTask-function.js">
       <metrics statements="55" coveredstatements="23" conditionals="6" coveredconditionals="0" methods="8" coveredmethods="1"/>
       <line num="5" count="1" type="stmt"/>
       <line num="7" count="1" type="stmt"/>
@@ -60,7 +60,7 @@
       <line num="78" count="0" type="cond" truecount="0" falsecount="2"/>
       <line num="79" count="0" type="stmt"/>
     </file>
-    <file name="clearAll-function.js" path="/home/wdavidcch/Desktop/microverse/Module 2/to-do-list/src/modules/clearAll-function.js">
+    <file name="clearAll-function.js" path="C:\Users\User\Desktop\colaborators\to-do-list\src\modules\clearAll-function.js">
       <metrics statements="8" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="3" coveredmethods="0"/>
       <line num="3" count="1" type="stmt"/>
       <line num="5" count="1" type="stmt"/>
@@ -71,7 +71,7 @@
       <line num="10" count="0" type="stmt"/>
       <line num="12" count="0" type="stmt"/>
     </file>
-    <file name="editFunction.js" path="/home/wdavidcch/Desktop/microverse/Module 2/to-do-list/src/modules/editFunction.js">
+    <file name="editFunction.js" path="C:\Users\User\Desktop\colaborators\to-do-list\src\modules\editFunction.js">
       <metrics statements="6" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="0"/>
       <line num="3" count="1" type="stmt"/>
       <line num="4" count="0" type="stmt"/>
@@ -80,20 +80,20 @@
       <line num="8" count="0" type="stmt"/>
       <line num="9" count="0" type="stmt"/>
     </file>
-    <file name="localStorage-functions.js" path="/home/wdavidcch/Desktop/microverse/Module 2/to-do-list/src/modules/localStorage-functions.js">
+    <file name="localStorage-functions.js" path="C:\Users\User\Desktop\colaborators\to-do-list\src\modules\localStorage-functions.js">
       <metrics statements="12" coveredstatements="12" conditionals="2" coveredconditionals="2" methods="3" coveredmethods="3"/>
       <line num="1" count="2" type="stmt"/>
       <line num="3" count="2" type="stmt"/>
-      <line num="4" count="8" type="cond" truecount="2" falsecount="0"/>
+      <line num="4" count="9" type="cond" truecount="2" falsecount="0"/>
       <line num="5" count="1" type="stmt"/>
-      <line num="7" count="7" type="stmt"/>
-      <line num="9" count="8" type="stmt"/>
+      <line num="7" count="8" type="stmt"/>
+      <line num="9" count="9" type="stmt"/>
       <line num="12" count="2" type="stmt"/>
       <line num="13" count="3" type="stmt"/>
       <line num="14" count="3" type="stmt"/>
       <line num="15" count="3" type="stmt"/>
       <line num="18" count="2" type="stmt"/>
-      <line num="19" count="4" type="stmt"/>
+      <line num="19" count="5" type="stmt"/>
     </file>
   </project>
 </coverage>

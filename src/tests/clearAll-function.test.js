@@ -28,7 +28,7 @@ const editFunction = (h3, task) => {
   localStorage.setItem('tasks', JSON.stringify(tasksArray));
 };
 
-document.body.innerHTML = '<div id="list"><div class="line"><input type="checkbox" class="check"><h3>hola</h3><span class="options"><i class="fa-solid fa-ellipsis-vertical"></i></span><span class="delete"><i class="fa-solid fa-trash-can"></i></span></div><div class="line"><input class="check" type="checkbox"><h3>david</h3><span class="options"><i class="fa-solid fa-ellipsis-vertical"></i></span><span class="delete"><i class="fa-solid fa-trash-can"></i></span></div></div>';
+document.body.innerHTML = '<div id="list"><div class="line"><input type="checkbox" class="check"><h3>hola</h3><span class="options"><i class="fa-solid fa-ellipsis-vertical"></i></span><span class="delete"><i class="fa-solid fa-trash-can"></i></span></div><div class="line"><input class="check" type="checkbox"><h3>david</h3><span class="options"><i class="fa-solid fa-ellipsis-vertical"></i></span><span class="delete"><i class="fa-solid fa-trash-can"></i></span></div></div><div id="clear-all">clear all</div>';
 
 const checkBox = document.querySelector('.check');
 
@@ -44,10 +44,23 @@ const editCheckbox = (task) => {
   }
 };
 
+function clearComplete() {
+  let taskArr = getTasks();
+  taskArr = taskArr.filter((task) => task.completed === false);
+  addNewStorage(taskArr);
+  return taskArr;
+}
+
 checkBox.addEventListener('click', () => {
   editCheckbox(tasksArray[0]);
 });
 
+const clearAll = document.getElementById('clear-all');
+clearAll.addEventListener('click', () => {
+  tasksArray = clearComplete();
+});
+
+// tests
 describe('Editing task description', () => {
   test('editing object from local storage', () => {
     editFunction('what', tasksArray[0]);
@@ -57,5 +70,12 @@ describe('Editing task description', () => {
   test('Editing items completed status', () => {
     checkBox.click();
     expect(tasksArray[0].completed).toBe(true);
+  });
+});
+
+describe('Editing task description', () => {
+  test('testing clear all functionality', () => {
+    clearAll.click();
+    expect(tasksArray).toHaveLength(2);
   });
 });
