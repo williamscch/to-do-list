@@ -1,5 +1,6 @@
 import clearAllCompleted from './clearAll-function.js';
 import { getTasks, addNewStorage } from './localStorage-functions.js';
+import editFunction from './editFunction.js';
 
 let tasksArray = [];
 
@@ -20,7 +21,9 @@ const addTaskScreen = (task) => {
   taskLine.classList.add('line');
   const checkBox = document.createElement('input');
   checkBox.type = 'checkbox';
+  checkBox.classList.add('check');
   const description = document.createElement('h3');
+  description.classList.add('description');
   const options = document.createElement('span');
   const removeButton = document.createElement('span');
   removeButton.classList.add('delete');
@@ -45,12 +48,8 @@ const addTaskScreen = (task) => {
 
     editField.addEventListener('keypress', (e) => {
       if (e.key === 'Enter') {
-        tasksArray = getTasks();
-        tasksArray[task.index - 1].description = editField.value;
-        addNewStorage(tasksArray);
+        editFunction(task, taskLine, editField, description);
 
-        taskLine.replaceChild(description, editField);
-        description.innerHTML = tasksArray[task.index - 1].description;
         taskLine.classList.remove('active');
         options.classList.remove('active');
         removeButton.classList.remove('active');
