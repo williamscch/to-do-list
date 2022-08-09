@@ -14,7 +14,7 @@
 
 ## Live Demo
 
-[Live Demo Link](https://wdavidcch.github.io/to-do-list/dist/)
+[Live Demo Link](https://williamscch.github.io/to-do-list/dist/)
 
 
 ## Getting Started
