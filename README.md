@@ -16,6 +16,8 @@
 
 [Live Demo Link](https://williamscch.github.io/to-do-list/dist/)
 
+## Quick view
+> ![](./app-ss.png)
 
 ## Getting Started
 
